@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import {GetResponseType} from "./types";
 
 const instance = axios.create({
@@ -9,7 +9,7 @@ const getQuery = (name: string = '', page: number = 1) => (
     `?page=${page}&name=${name}`
 )
 
-export const getCharacters = (name: string = '') => instance
+export const getCharacters = (name = '') => instance
     .get<GetResponseType>(getQuery(name))
 
 export const getCharactersByClick = (click:string) => axios.get(click)

@@ -7,16 +7,19 @@ import {useEffect, useState} from "react";
 import {toggleIsFetchingAC} from "../redux-store/app-reducer";
 import {FetchMoreButton} from "./Button/fetchMoreButton";
 import {useTypedSelector} from "../redux-store";
+import * as appSelectors from "./Selectors";
 
-const App = () => {
+export const App = () => {
     const [fetch, content, fetchMore] = useFetchContent();
     const [isDataLoaded, setIsDataLoaded] = useState(true);
+    const {selectCharacters, selectTotalPage, selectNextPage, selectIsFetching, selectError} = appSelectors
 
-    const characters = useTypedSelector(state => state.app.characters);
-    const totalPage = useTypedSelector(state => state.app.totalPage);
-    const nextPage = useTypedSelector(state => state.app.nextPage);
-    const isFetching = useTypedSelector(state => state.app.isFetching);
-    const error = useTypedSelector(state => state.app.error);
+    const characters = useTypedSelector(selectCharacters);
+    const totalPage = useTypedSelector(selectTotalPage);
+    const nextPage = useTypedSelector(selectNextPage);
+    const isFetching = useTypedSelector(selectIsFetching);
+    const error = useTypedSelector(selectError);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -24,7 +27,7 @@ const App = () => {
             fetch();
             setIsDataLoaded(false);
         }
-    }, [isDataLoaded,fetch]);
+    }, [isDataLoaded, fetch]);
 
     const fetchMoreHandler = () => {
         let finalList = characters ? characters : content;
@@ -54,4 +57,3 @@ const App = () => {
     );
 };
 
-export default App;
