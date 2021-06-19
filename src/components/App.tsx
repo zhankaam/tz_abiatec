@@ -7,12 +7,17 @@ import {useEffect, useState} from "react";
 import {toggleIsFetchingAC} from "../redux-store/app-reducer";
 import {FetchMoreButton} from "./Button/fetchMoreButton";
 import {useTypedSelector} from "../redux-store";
-import * as appSelectors from "./Selectors";
+import {
+    selectCharacters,
+    selectTotalPage,
+    selectNextPage,
+    selectIsFetching,
+    selectError
+} from "./Selectors";
 
 export const App = () => {
     const [fetch, content, fetchMore] = useFetchContent();
     const [isDataLoaded, setIsDataLoaded] = useState(true);
-    const {selectCharacters, selectTotalPage, selectNextPage, selectIsFetching, selectError} = appSelectors
 
     const characters = useTypedSelector(selectCharacters);
     const totalPage = useTypedSelector(selectTotalPage);
@@ -34,7 +39,7 @@ export const App = () => {
         fetchMore(finalList, totalPage, nextPage);
     };
 
-    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
     if (characters.length !== 0 && totalPage.length !== 0) {
         if (!nextPage && characters[characters.length - 1].id === totalPage[totalPage.length - 1].id) {
             dispatch(toggleIsFetchingAC(false));
@@ -44,7 +49,7 @@ export const App = () => {
     } else {
         dispatch(toggleIsFetchingAC(true));
     }
-    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
     return (
         <div className="App">

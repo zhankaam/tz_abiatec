@@ -1,11 +1,10 @@
-import React from "react"
+import React, {MouseEventHandler} from "react"
 import "./index.css";
 
 type PropsType = {
-    onClick: any
-    children: string
+    onClick: MouseEventHandler
 }
 
 export const Button: React.FC<PropsType> = (props) => (
-  <button className="Button" {...props} />
+  <button className="button" {...props} />
 );

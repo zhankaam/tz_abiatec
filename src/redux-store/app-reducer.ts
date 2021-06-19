@@ -16,6 +16,11 @@ export const appReducer = (
     action: AppActionTypes
 ): InitialStateType => {
     switch (action.type) {
+        case ActionTypes.FETCH_MORE_CHARACTERS:
+            return {
+                ...state,
+                characters: [...state.characters, ...action.payload.characters]
+            }
         case ActionTypes.FETCH_CHARACTERS:
         case ActionTypes.REMOVE_CHARACTERS:
         case ActionTypes.SET_TOTAL_PAGE:
@@ -33,29 +38,35 @@ export const appReducer = (
 
 export const fetchCharactersAC = (characters: CharactersResType[]) => (
     {
-        type: ActionTypes.FETCH_CHARACTERS, payload: {characters}
+        type: ActionTypes.FETCH_CHARACTERS, payload: {characters} as InitialStateType
+    } as const);
+export const fetchMoreCharactersAC = (characters: CharactersResType[]) => (
+    {
+        type: ActionTypes.FETCH_MORE_CHARACTERS, payload: {characters}
     } as const);
 
 export const removeCharactersAC = () => (
-    {type: ActionTypes.REMOVE_CHARACTERS, payload: {}} as const);
+    {
+        type: ActionTypes.REMOVE_CHARACTERS, payload: {characters: [] as CharactersResType[]} as InitialStateType
+    } as const);
 
 export const setTotalPageAC = (totalPage: CharactersResType[]) => (
     {
-        type: ActionTypes.SET_TOTAL_PAGE, payload: {totalPage}
+        type: ActionTypes.SET_TOTAL_PAGE, payload: {totalPage} as InitialStateType
     } as const);
 
 export const setNextPageAC = (nextPage: string) => (
     {
-        type: ActionTypes.SET_NEXT_PAGE, payload: {nextPage}
+        type: ActionTypes.SET_NEXT_PAGE, payload: {nextPage} as InitialStateType
     } as const);
 
 export const toggleIsFetchingAC = (isFetching: boolean) => (
     {
-        type: ActionTypes.TOGGLE_IS_FETCHING, payload: {isFetching}
+        type: ActionTypes.TOGGLE_IS_FETCHING, payload: {isFetching} as InitialStateType
     } as const);
 
 export const setAppErrorAC = (error: string) => (
     {
-        type: ActionTypes.SET_APP_ERROR, payload: {error}
+        type: ActionTypes.SET_APP_ERROR, payload: {error} as InitialStateType
     } as const);
 

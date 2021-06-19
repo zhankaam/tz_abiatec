@@ -1,9 +1,10 @@
 import React from "react";
 import {IContentList} from "./types";
+import "./index.css";
 
 export const ContentList: React.FC<IContentList> = ({content}) => {
 
-    const renderItem = () => (
+    const renderCharacters = () => (
         content.map(({id, image, name, species, location}) =>
             <li key={id}>
                 <img
@@ -23,8 +24,8 @@ export const ContentList: React.FC<IContentList> = ({content}) => {
     )
 
     return (
-        <ul>
-            {renderItem()}
+        <ul className={"contentList"}>
+            {renderCharacters()}
         </ul>
     );
 };

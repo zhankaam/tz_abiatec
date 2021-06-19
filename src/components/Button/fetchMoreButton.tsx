@@ -1,18 +1,14 @@
-import React from "react";
+import React, {MouseEventHandler} from "react";
 import {Button} from "./index";
-import {CharactersResType} from "../../server/types";
+import "./index.css";
 
 type PropsType = {
-    onClick: (
-        imgList: CharactersResType[],
-        totalPages: CharactersResType[],
-        nextPage: string
-    ) => void
+    onClick: MouseEventHandler
 }
 
 export const FetchMoreButton: React.FC<PropsType> = ({onClick}) => {
     return (
-        <div className="FetchMore">
+        <div className="fetchMore" >
             <Button
                 onClick={onClick}
             > Fetch More

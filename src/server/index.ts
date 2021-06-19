@@ -15,12 +15,3 @@ export const getCharacters = (name = '') => instance
 export const getCharactersByClick = (click:string) => axios.get(click)
 
 
-// export const API = {
-//     getCharacters(name:string = '', page:number = 1) {
-//         return name ? instance.get<GetResponseType>(`?page=${page}&name=${name}`) : instance.get(`?page=${page}`);
-//     },
-//     getCharactersByClick(click:string) {
-//         return axios.get(click);
-//     }
-// };
-

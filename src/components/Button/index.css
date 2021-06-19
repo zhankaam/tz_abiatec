@@ -1,4 +1,4 @@
-.Button {
+.button {
   height: 2.325rem;
   background: #767676;
   border-radius: 0.25rem;
@@ -10,6 +10,10 @@
   cursor: pointer;
 }
 
-.Button:hover {
+.button:hover {
   background: #767676C0;
+}
+
+.fetchMore {
+  padding-bottom: 20px;
 }

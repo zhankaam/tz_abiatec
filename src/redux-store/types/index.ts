@@ -1,5 +1,5 @@
 import {
-    fetchCharactersAC, initialState,
+    fetchCharactersAC, fetchMoreCharactersAC, initialState,
     removeCharactersAC,
     setAppErrorAC,
     setNextPageAC,
@@ -9,6 +9,7 @@ import {
 
 export type AppActionTypes =
     | ReturnType<typeof fetchCharactersAC>
+    | ReturnType<typeof fetchMoreCharactersAC>
     | ReturnType<typeof removeCharactersAC>
     | ReturnType<typeof setTotalPageAC>
     | ReturnType<typeof setNextPageAC>

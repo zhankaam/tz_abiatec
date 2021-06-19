@@ -1,6 +1,6 @@
 import {CharactersResType} from "../../server/types";
 
-export type IData = [
+export type IFetchHook = [
     (value?: string) => void,
     CharactersResType[],
     (imgList: CharactersResType[],
