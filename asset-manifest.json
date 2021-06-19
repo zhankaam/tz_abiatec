@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/tz_abiatec/static/css/main.72ec2e20.chunk.css",
+    "main.js": "/tz_abiatec/static/js/main.398362b3.chunk.js",
+    "main.js.map": "/tz_abiatec/static/js/main.398362b3.chunk.js.map",
+    "runtime-main.js": "/tz_abiatec/static/js/runtime-main.7884af6b.js",
+    "runtime-main.js.map": "/tz_abiatec/static/js/runtime-main.7884af6b.js.map",
+    "static/js/2.7744425d.chunk.js": "/tz_abiatec/static/js/2.7744425d.chunk.js",
+    "static/js/2.7744425d.chunk.js.map": "/tz_abiatec/static/js/2.7744425d.chunk.js.map",
+    "index.html": "/tz_abiatec/index.html",
+    "static/css/main.72ec2e20.chunk.css.map": "/tz_abiatec/static/css/main.72ec2e20.chunk.css.map",
+    "static/js/2.7744425d.chunk.js.LICENSE.txt": "/tz_abiatec/static/js/2.7744425d.chunk.js.LICENSE.txt",
+    "static/media/logo.e1f86449.svg": "/tz_abiatec/static/media/logo.e1f86449.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7884af6b.js",
+    "static/js/2.7744425d.chunk.js",
+    "static/css/main.72ec2e20.chunk.css",
+    "static/js/main.398362b3.chunk.js"
+  ]
+}
